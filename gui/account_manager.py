@@ -177,6 +177,7 @@ def list_accounts_data():
     """Lấy dữ liệu danh sách tài khoản (để hiển thị)"""
     accounts = load_accounts()
     data = list(accounts.values())
-    # Sắp xếp ngược theo thời gian sử dụng cuối cùng
-    data.sort(key=lambda x: x.get("last_used", ""), reverse=True)
+    # Sắp xếp theo thời gian tạo (cũ nhất lên đầu) để giữ thứ tự nhất quán
+    # Điều này đảm bảo số thứ tự không thay đổi khi switch tài khoản
+    data.sort(key=lambda x: x.get("created_at", ""))
     return data

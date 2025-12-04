@@ -187,11 +187,11 @@ def cli_mode():
 
     # Switch
     switch_parser = subparsers.add_parser("switch", help="Chuyển sang bản lưu trữ chỉ định")
-    switch_parser.add_argument("--id", "-i", required=True, help="ID bản lưu trữ")
+    switch_parser.add_argument("id", help="ID hoặc số thứ tự bản lưu trữ")
 
     # Delete
     del_parser = subparsers.add_parser("delete", help="Xóa bản lưu trữ")
-    del_parser.add_argument("--id", "-i", required=True, help="ID bản lưu trữ")
+    del_parser.add_argument("id", help="ID hoặc số thứ tự bản lưu trữ")
     
     # Process Control
     subparsers.add_parser("start", help="Khởi động Antigravity")

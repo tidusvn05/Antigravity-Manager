@@ -68,19 +68,19 @@ python main.py
 **Các lệnh thường dùng**:
 ```bash
 # Liệt kê tất cả các bản lưu trữ
-python main.py list
+agr list
 
 # Sao lưu tài khoản hiện tại (tự động lấy tên)
-python main.py add
+agr add
 
 # Sao lưu với tên chỉ định
-python main.py add -n "Tài khoản công việc"
+agr add -n "Tài khoản công việc"
 
-# Chuyển đổi tài khoản (sử dụng ID hoặc số thứ tự trong danh sách)
-python main.py switch -i 1
+# Chuyển đổi tài khoản (sử dụng số thứ tự hoặc UUID)
+agr switch 1
 
 # Xóa bản sao lưu
-python main.py delete -i 1
+agr delete 1
 ```
 
 ---
@@ -122,15 +122,15 @@ agr add
 agr add -n "Tài khoản công việc"
 
 # Chuyển đổi tài khoản
-agr switch -i 1
+agr switch 1
 
 # Xóa tài khoản
-agr delete -i 1
+agr delete 1
 
 # Xem tất cả lệnh có sẵn
 agr --help
 ```
-
+    
 ### Gỡ cài đặt
 
 Nếu muốn gỡ bỏ các lệnh toàn cục:
