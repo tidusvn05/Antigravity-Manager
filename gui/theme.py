@@ -1,7 +1,7 @@
 import flet as ft
 
 class ThemeColors:
-    # Light Theme
+    # Giao diện sáng
     LIGHT_BG_PAGE = "#FAFAFA"
     LIGHT_BG_CARD = "#FFFFFF"
     LIGHT_TEXT_MAIN = "#1A1A1A"
@@ -14,18 +14,18 @@ class ThemeColors:
     LIGHT_SIDEBAR_BG = "#F6F6F6"
     LIGHT_SIDEBAR_BORDER = "#E5E5E5"
 
-    # Dark Theme - Softer grays for better visual comfort
-    DARK_BG_PAGE = "#121212"  # Soft dark gray instead of pure black
-    DARK_BG_CARD = "#1E1E1E"  # Slightly lighter card
-    DARK_TEXT_MAIN = "#E5E5E5"  # Softer white
+    # Giao diện tối - Màu xám dịu hơn để thoải mái cho mắt
+    DARK_BG_PAGE = "#121212"  # Xám đậm dịu thay vì đen tuyền
+    DARK_BG_CARD = "#1E1E1E"  # Thẻ sáng hơn một chút
+    DARK_TEXT_MAIN = "#E5E5E5"  # Trắng dịu
     DARK_TEXT_GREY = "#98989D"
-    DARK_PRIMARY = "#6B93FF"  # Brighter blue for dark mode
-    DARK_BG_LIGHT_BLUE = "#1A2842"  # Deeper blue tint
-    DARK_BG_LIGHT_RED = "#3D1F1F"  # Deeper red tint
-    DARK_BG_LIGHT_GREEN = "#1F3D28"  # Deeper green tint
-    DARK_SHADOW = "#10000000"  # Very subtle shadow
-    DARK_SIDEBAR_BG = "#1A1A1A"  # Sidebar slightly darker than page
-    DARK_SIDEBAR_BORDER = "#2A2A2A"  # Subtle border
+    DARK_PRIMARY = "#6B93FF"  # Xanh lam sáng hơn cho chế độ tối
+    DARK_BG_LIGHT_BLUE = "#1A2842"  # Tông xanh lam đậm hơn
+    DARK_BG_LIGHT_RED = "#3D1F1F"  # Tông đỏ đậm hơn
+    DARK_BG_LIGHT_GREEN = "#1F3D28"  # Tông xanh lục đậm hơn
+    DARK_SHADOW = "#10000000"  # Bóng rất mờ
+    DARK_SIDEBAR_BG = "#1A1A1A"  # Sidebar tối hơn trang một chút
+    DARK_SIDEBAR_BORDER = "#2A2A2A"  # Viền mờ
 
 class Palette:
     def __init__(self, is_dark):
