@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Antigravity Manager GUI Wrapper
+# Cho phép chạy GUI từ bất kỳ đâu trong terminal
+
+# Lấy đường dẫn thực của script này (resolve symlink)
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+# Nếu là symlink, lấy đường dẫn thực
+while [ -L "$SCRIPT_PATH" ]; do
+    SCRIPT_DIR="$( cd -P "$( dirname "$SCRIPT_PATH" )" && pwd )"
+    SCRIPT_PATH="$(readlink "$SCRIPT_PATH")"
+    # Nếu readlink trả về relative path, cần combine với SCRIPT_DIR
+    [[ $SCRIPT_PATH != /* ]] && SCRIPT_PATH="$SCRIPT_DIR/$SCRIPT_PATH"
+done
+SCRIPT_DIR="$( cd -P "$( dirname "$SCRIPT_PATH" )" && pwd )"
+# Đường dẫn đến thư mục gốc của project (parent của bin/)
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Đường dẫn đến Python virtual environment
+VENV_PYTHON="$PROJECT_ROOT/.venv/bin/python"
+
+# Đường dẫn đến gui/main.py
+GUI_MAIN_PY="$PROJECT_ROOT/gui/main.py"
+
+# Kiểm tra xem virtual environment có tồn tại không
+if [ ! -f "$VENV_PYTHON" ]; then
+    echo "❌ Lỗi: Không tìm thấy Python virtual environment tại $VENV_PYTHON"
+    echo "💡 Vui lòng chạy: python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt"
+    exit 1
+fi
+
+# Kiểm tra xem gui/main.py có tồn tại không
+if [ ! -f "$GUI_MAIN_PY" ]; then
+    echo "❌ Lỗi: Không tìm thấy gui/main.py tại $GUI_MAIN_PY"
+    exit 1
+fi
+
+# Chạy GUI
+echo "🚀 Đang khởi động Antigravity Manager GUI..."
+"$VENV_PYTHON" "$GUI_MAIN_PY"

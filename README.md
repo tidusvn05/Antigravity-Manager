@@ -85,6 +85,66 @@ python main.py delete -i 1
 
 ---
 
+## 🔧 Cài đặt lệnh toàn cục (macOS)
+
+Để có thể gọi các lệnh `agr` và `agr-ui` từ bất kỳ đâu trong terminal mà không cần vào thư mục source, bạn có thể sử dụng script cài đặt tự động:
+
+### Cài đặt
+
+```bash
+# 1. Cấp quyền thực thi cho script cài đặt
+chmod +x install_macos.sh
+
+# 2. Chạy script cài đặt (sẽ yêu cầu mật khẩu sudo)
+./install_macos.sh
+```
+
+Script sẽ tự động:
+- ✅ Kiểm tra và thiết lập Python virtual environment
+- ✅ Cài đặt tất cả dependencies
+- ✅ Tạo symlink tại `/usr/local/bin`
+
+### Sử dụng
+
+Sau khi cài đặt, bạn có thể sử dụng các lệnh sau từ **bất kỳ đâu** trong terminal:
+
+```bash
+# Khởi động GUI
+agr-ui
+
+# Liệt kê tất cả tài khoản
+agr list
+
+# Thêm tài khoản mới
+agr add
+
+# Thêm tài khoản với tên chỉ định
+agr add -n "Tài khoản công việc"
+
+# Chuyển đổi tài khoản
+agr switch -i 1
+
+# Xóa tài khoản
+agr delete -i 1
+
+# Xem tất cả lệnh có sẵn
+agr --help
+```
+
+### Gỡ cài đặt
+
+Nếu muốn gỡ bỏ các lệnh toàn cục:
+
+```bash
+# Cấp quyền và chạy script gỡ cài đặt
+chmod +x uninstall_macos.sh
+./uninstall_macos.sh
+```
+
+**Lưu ý**: Script gỡ cài đặt chỉ xóa symlink, không xóa virtual environment và dữ liệu tài khoản.
+
+---
+
 ## 📦 Đóng gói và Triển khai
 
 Dự án này tích hợp sẵn các script xây dựng tự động, có thể tạo ra các tệp thực thi độc lập không cần môi trường Python.
